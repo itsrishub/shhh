@@ -1,0 +1,9 @@
+[package]
+name = "shhh"
+version = "0.1.0"
+edition = "2021"
+description = "Decode base64 secrets from Kubernetes YAML output"
+
+[dependencies]
+base64 = "0.21"
+atty = "0.2"
