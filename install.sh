@@ -23,7 +23,7 @@ TMP_DIR=$(mktemp -d)
 cd "$TMP_DIR"
 
 # --- Download binary ---
-BIN="${BINARY_NAME}_${OS}_${ARCH}"
+BIN="${BINARY_NAME}-${OS}-${ARCH}"
 DOWNLOAD_URL="https://github.com/${REPO}/releases/latest/download/${BIN}"
 
 echo "Downloading from: $DOWNLOAD_URL"
