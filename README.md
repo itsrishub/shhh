@@ -7,6 +7,12 @@ A CLI tool to decode base64-encoded Kubernetes secrets.
 ## Installation
 
 ```bash
+curl -fsSL https://raw.githubusercontent.com/itsrishub/shhh/main/install.sh | sudo bash
+```
+
+## Build from source
+
+```bash
 cargo build --release
 sudo cp target/release/shhh /usr/local/bin/
 ```
