@@ -5,7 +5,6 @@ set -e
 REPO="itsrishub/shhh"             # change this to your repo
 BINARY_NAME="shhh"           # change this to your binary name
 INSTALL_DIR="/usr/local/bin"
-VERSION="1.0.0"
 
 # --- Detect OS and Architecture ---
 OS=$(uname -s | tr '[:upper:]' '[:lower:]')
@@ -24,14 +23,11 @@ TMP_DIR=$(mktemp -d)
 cd "$TMP_DIR"
 
 # --- Download binary tar.gz ---
-TAR_NAME="${BINARY_NAME}_${VERSION}_${OS}_${ARCH}.tar.gz"
-DOWNLOAD_URL="https://github.com/${REPO}/releases/latest/download/${TAR_NAME}"
+BIN="${BINARY_NAME}_${OS}_${ARCH}.tar.gz"
+DOWNLOAD_URL="https://github.com/${REPO}/releases/latest/download/${BIN}"
 
 echo "Downloading from: $DOWNLOAD_URL"
-curl -fsSLk "$DOWNLOAD_URL" -o "$TAR_NAME"
-
-# --- Extract and move ---
-tar -xzf "$TAR_NAME"
+curl -fsSLk "$DOWNLOAD_URL" -o "$BINARY_NAME"
 chmod +x "$BINARY_NAME"
 
 echo "Moving ${BINARY_NAME} to ${INSTALL_DIR}"
